@@ -704,7 +704,6 @@ public class SliderLayout extends RelativeLayout{
    @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        Log.e("SliderFix", "onDetachedFromWindow() ***");
         if(mCycleTimer != null) mCycleTimer.cancel();
         if(mCycleTask != null) mCycleTask.cancel();
         if(mResumingTask != null) mResumingTask.cancel();
