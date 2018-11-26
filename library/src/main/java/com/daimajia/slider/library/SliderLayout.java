@@ -699,4 +699,17 @@ public class SliderLayout extends RelativeLayout{
     public void moveNextPosition() {
         moveNextPosition(true);
     }
+    
+    
+    @override
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        CustomLog.debug(LOG_TAG, "onDetachedFromWindow() ***");
+        if(mCycleTimer != null) mCycleTimer.cancel();
+        if(mCycleTask != null) mCycleTask.cancel();
+        if(mResumingTask != null) mResumingTask.cancel();
+        if(mResumingTimer != null) mResumingTimer.cancel();
+        mh.removeCallbacksAndMessages(null);
+    }
+    
 }
