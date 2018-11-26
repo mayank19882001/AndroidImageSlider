@@ -701,10 +701,10 @@ public class SliderLayout extends RelativeLayout{
     }
     
     
-    @override
+   @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        CustomLog.debug(LOG_TAG, "onDetachedFromWindow() ***");
+        Log.e("SliderFix", "onDetachedFromWindow() ***");
         if(mCycleTimer != null) mCycleTimer.cancel();
         if(mCycleTask != null) mCycleTask.cancel();
         if(mResumingTask != null) mResumingTask.cancel();
